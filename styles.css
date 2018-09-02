@@ -13,7 +13,7 @@ html,body{
     padding:10px;
     background-color:#262626;
 } */
-.content{
+.header{
     padding:10px;
     padding-bottom:15vh;   /* Height of the footer */
     background-color:#4d4d4d;
@@ -22,6 +22,6 @@ html,body{
     position:fixed;
     bottom:0;
     width:100vw;
-    height:100px;   /* Height of the footer */
+    height:20vh;   /* Height of the footer */
     background:white;
 }

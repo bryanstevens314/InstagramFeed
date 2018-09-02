@@ -7,7 +7,7 @@
     <body>
 <div class ="container">
     <!-- <div class = "header"></div> -->
-    <div class = "content"></div>
+    <div class = "header"></div>
     <div class = "footer">
         <script type="text/javascript">
             sa_client = "6c46c8fcfb45f029c59c9cbda00fc581";
@@ -27,7 +27,7 @@
             sa_height = getHeight();
             sa_location = "0";
             sa_radius = "0";
-            sa_borderwidth = "1";
+            sa_borderwidth = "0";
             sa_font = "0";
             document.write(unescape("%3cscript type='text/javascript' src='"+sa_protocol+"://sa.entireweb.com/sense2.js'%3e%3c/script%3e"));
 
@@ -50,19 +50,19 @@
             function getHeight() {
                 if (self.innerHeight) {
                     console.log(self.innerHeight);
-                    let height = self.innerHeight * .4;
+                    let height = self.innerHeight * .2;
                     return height;
                 }
 
                 if (document.documentElement && document.documentElement.clientHeight) {
                     console.log(document.documentElement.clientHeight);
-                    let height = document.documentElement.clientHeight * .4;
+                    let height = document.documentElement.clientHeight * .2;
                     return height;
                 }
 
                 if (document.body) {
                     console.log(document.body.clientHeight);
-                    let height = document.body.clientHeight * .4;
+                    let height = document.body.clientHeight * .2;
                     return height;
                 }
             }
