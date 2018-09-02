@@ -15,13 +15,13 @@ html,body{
 } */
 .content{
     padding:10px;
-    padding-bottom:60px;   /* Height of the footer */
+    padding-bottom:15vh;   /* Height of the footer */
     background-color:#4d4d4d;
 }
 .footer{
-    position:absolute;
+    position:fixed;
     bottom:0;
     width:100vw;
-    height:60px;   /* Height of the footer */
+    height:100px;   /* Height of the footer */
     background:white;
 }

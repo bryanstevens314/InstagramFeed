@@ -24,7 +24,7 @@
             sa_b = "0";
             sa_format = "column_120x600";
             sa_width = getWidth();
-            sa_height = "60";
+            sa_height = getHeight();
             sa_location = "0";
             sa_radius = "0";
             sa_borderwidth = "1";
@@ -43,7 +43,23 @@
                 if (document.body) {
                     return document.body.clientWidth;
                 }
+            }
+            function getHeight() {
+                if (self.innerHeight) {
+                    let height = self.innerHeight * .2;
+                    return height;
                 }
+
+                if (document.documentElement && document.documentElement.clientHeight) {
+                    let height = document.documentElement.clientHeight * .2;
+                    return height;
+                }
+
+                if (document.body) {
+                    let height = document.body.clientHeight * .2;
+                    return height;
+                }
+            }
             </script>
     </div>
 </div>
