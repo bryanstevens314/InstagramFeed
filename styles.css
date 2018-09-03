@@ -7,7 +7,7 @@ html,body{
 .container{
     min-height:100vh;
     position:relative;
-    background-color:grey;
+    background-color:#e6e6e6;
 }
 /* .header{
     padding:10px;
@@ -16,7 +16,7 @@ html,body{
 .header{
     padding:10px;
     padding-bottom:15vh;   /* Height of the footer */
-    background-color:#4d4d4d;
+    background-color:#262626;
 }
 .footer{
     position:fixed;
