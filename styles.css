@@ -4,6 +4,10 @@ html,body{
     height:100vh;
     width:100vw;
 }
+.store{
+    width:30px;
+    height:30px;
+}
 .container{
     min-height:100vh;
     position:relative;
