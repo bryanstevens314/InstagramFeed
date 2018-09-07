@@ -10,10 +10,10 @@ html,body{
     
 }
 img{
-    width:50vw;
+    width:70vw;
 }
 .instapic{
-    margin-top:20px;
+    margin-top:10px;
 }
 .store{
     width:30px;
@@ -39,4 +39,30 @@ img{
     width:100vw;
     height:20vh;   /* Height of the footer */
     background:black;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttons{
+    margin-top:20px;
+    text-align:center;
 }

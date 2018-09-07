@@ -1,14 +1,15 @@
 let content = document.getElementById("content");
+let testing = false;
+let instragramFeed = {};
 
-let testing = true;
 
 function loadEverything() {
+    //content.innerHTML = "Hello World";
     if (testing === false){
         content.appendChild(propellerBannerAd);
     }
-    instagramAPI();
+    //instagramAPI();
 }
-
 window.onload = loadEverything;
 
 let params = {
@@ -20,10 +21,10 @@ let params = {
 let url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=8521258789.e9bc9a5.cb1b6d0891e84282b2aaa36959ad7a96";
 function instagramAPI (){
     $.getJSON(url, function (data) {
-        console.log(data);
-        for (let i = 0; i < data.data.length; i++){
+        instragramFeed = data.data;
+        for (let i = 0; i < 7; i++){
             var container = document.getElementById('insta-feed');
-            var imgURL = data.data[i].images.standard_resolution.url;
+            var imgURL = instragramFeed[i].images.standard_resolution.url;
            
             var div = document.createElement('div');
             div.setAttribute('class','instapic');
@@ -32,6 +33,7 @@ function instagramAPI (){
             img.setAttribute('src',imgURL)
             div.appendChild(img);            
         }
+
     });
 }
 
