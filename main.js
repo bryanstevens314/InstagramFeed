@@ -1,7 +1,7 @@
 var content = document.getElementById("content");
 var next = document.getElementById("nextPage");
 var prev = document.getElementById("prevPage");
-var testing = false;
+var testing = true;
 var instragramFeed = {};
 
 
@@ -34,9 +34,22 @@ function instagramAPI (){
             img.setAttribute('src',imgURL)
             div.appendChild(img);            
         }
+        var buttonDiv = document.getElementById("buttonDiv");
+        
+        var next = document.createElement("a");
+        next.setAttribute = ('id','nextPage');
+        next.setAttribute = ('class','next');
+        next.innerHTML = "Next &raquo;";
 
+        var prev = document.createElement("a");
+        prev.setAttribute = ('id','prevPage')
+        prev.setAttribute = ('class','previous');
+        prev.innerHTML = "&laquo; Previous";
+        buttonDiv.appendChild(prev);
+        buttonDiv.appendChild(next);
     });
 }
+ 
 function nextPage (){
 
 }
