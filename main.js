@@ -12,7 +12,7 @@ prev.innerHTML = "&laquo; Previous";
 var instagramFeed = [];
 var page = 1;
 var clear = false;
-var testing = true;
+var testing = false;
 
 function loadEverything() {
     console.log('fired');
@@ -62,6 +62,7 @@ function instagramAPI() {
             if (testing === false) {
                 if (i % 2 === 0) {
                     if (i !== 0) {
+                        console.log('fired: native ad');
                         div.appendChild(propellerNativeAd);
                     }
                 }
