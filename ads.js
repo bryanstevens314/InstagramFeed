@@ -1,8 +1,13 @@
 //Propeller ads Banner
-let propellerBannerAd = document.createElement('script');
+var propellerBannerAd = document.createElement('script');
 propellerBannerAd.setAttribute('async', 'async');
 propellerBannerAd.setAttribute('data-cfasync', 'false');
 propellerBannerAd.setAttribute('src', '//native.propellerads.com/1?z=1992444&eid=');
+//Propeller ads native
+var propellerNativeAd = document.createElement('script');
+propellerBannerAd.setAttribute('async', 'async');
+propellerBannerAd.setAttribute('data-cfasync', 'false');
+propellerBannerAd.setAttribute('src', '//native.propellerads.com/1?z=2059928&eid=');
 
 // //Google Native Ad
 // let googleNativeAdScript = document.createElement('googleNativeScript');
