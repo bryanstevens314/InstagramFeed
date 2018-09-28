@@ -76,6 +76,10 @@ function instagramAPI() {
                 'fast'
             );
         }
+        var buttonDiv = document.getElementById('buttonDiv1');
+
+        buttonDiv.appendChild(prev);
+        buttonDiv.appendChild(next);
         for (i; i < index; i++) {
             var imgURL = instagramFeed[i].images.standard_resolution.url;
             createImageWithURL(imgURL);
