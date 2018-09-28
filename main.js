@@ -19,10 +19,9 @@ prev.innerHTML = '&laquo; Previous';
 var instagramFeed = [];
 var clear = false;
 var page = 1;
-var testing = false;
+var testing = true;
 
 function loadEverything() {
-    window.open('http://go.pub2srv.com/afu.php?zoneid=2021129', '_blank');
     if (testing === false) {
         content.appendChild(propellerBannerAd);
     }
@@ -87,6 +86,7 @@ function createImageWithURL(url) {
     container.appendChild(div);
     var img = document.createElement('img');
     img.setAttribute('src', url);
+    img.addEventListener('click', imgClicked);
     div.appendChild(img);
 }
 
@@ -97,6 +97,12 @@ function getNativeAd() {
     propellerNativeAd.setAttribute('data-cfasync', 'false');
     propellerNativeAd.setAttribute('src', '//native.propellerads.com/1?z=2059928&eid=');
     return propellerNativeAd;
+}
+
+function imgClicked() {
+    if (testing === false) {
+        window.open('http://go.pub2srv.com/afu.php?zoneid=2021129', '_blank');
+    }
 }
 
 function nextPage() {
