@@ -1,10 +1,6 @@
 var content = document.getElementById('content');
 var container = document.getElementById('insta-feed');
-//Propeller ads native
-var propellerNativeAd = document.createElement('script');
-propellerNativeAd.setAttribute('async', 'async');
-propellerNativeAd.setAttribute('data-cfasync', 'false');
-propellerNativeAd.setAttribute('src', '//native.propellerads.com/1?z=2059928&eid=');
+
 //Propeller ads Banner
 var propellerBannerAd = document.createElement('script');
 propellerBannerAd.setAttribute('async', 'async');
@@ -65,21 +61,15 @@ function instagramAPI() {
         }
         for (i; i < index; i++) {
             var imgURL = instagramFeed[i].images.standard_resolution.url;
-            var div = document.createElement('div');
-            div.setAttribute('class', 'instapic');
-            container.appendChild(div);
-            var img = document.createElement('img');
-            img.setAttribute('src', imgURL);
-            div.appendChild(img);
-
+            createImageWithURL(imgURL);
             if (testing === false) {
                 if (i % 2 === 0) {
                     if (i !== 0) {
                         var div1 = document.createElement('div');
                         div1.setAttribute('class', 'instapic');
                         container.appendChild(div1);
-
-                        div1.appendChild(propellerNativeAd);
+                        var ad = getNativeAd();
+                        div1.appendChild(ad);
                     }
                 }
             }
@@ -89,6 +79,24 @@ function instagramAPI() {
         buttonDiv.appendChild(prev);
         buttonDiv.appendChild(next);
     });
+}
+
+function createImageWithURL(url) {
+    var div = document.createElement('div');
+    div.setAttribute('class', 'instapic');
+    container.appendChild(div);
+    var img = document.createElement('img');
+    img.setAttribute('src', url);
+    div.appendChild(img);
+}
+
+function getNativeAd() {
+    //Propeller ads native
+    var propellerNativeAd = document.createElement('script');
+    propellerNativeAd.setAttribute('async', 'async');
+    propellerNativeAd.setAttribute('data-cfasync', 'false');
+    propellerNativeAd.setAttribute('src', '//native.propellerads.com/1?z=2059928&eid=');
+    return propellerNativeAd;
 }
 
 function nextPage() {
