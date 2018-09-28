@@ -22,12 +22,30 @@ var page = 1;
 var testing = false;
 
 function loadEverything() {
+    getPageNum(window.location.href);
     if (testing === false) {
+        if (page > 1) {
+            var ad = getNativeAd("//tharbadir.com/2?z=1991963");
+            content.appendChild(ad);
+        }
         content.appendChild(propellerBannerAd);
     }
     instagramAPI();
 }
 window.onload = loadEverything;
+
+function getPageNum(url) {
+    var id = url.substring(url.lastIndexOf('/') + 1);
+    if (url.includes('?')) {
+        var arr = id.split('?');
+        var arr2 = arr[1].split("=");
+        page = arr2[1];
+        console.log(page);
+    } else {
+        page = 1;
+    }
+
+}
 
 var params = {
     URL: 'http://instagr.am/p/fA9uwTtkSN/',
@@ -62,7 +80,8 @@ function instagramAPI() {
             var imgURL = instagramFeed[i].images.standard_resolution.url;
             createImageWithURL(imgURL);
             if (testing === false) {
-                if (i % 2 === 0) {
+                var y = i + 1;
+                if (y % 2 === 0) {
                     if (i !== 0) {
                         var div1 = document.createElement('div');
                         div1.setAttribute('class', 'instapic');
@@ -80,22 +99,34 @@ function instagramAPI() {
     });
 }
 
-function createImageWithURL(url) {
+function createImageWithURL(uri) {
     var div = document.createElement('div');
     div.setAttribute('class', 'instapic');
     container.appendChild(div);
     var img = document.createElement('img');
-    img.setAttribute('src', url);
+    img.setAttribute('src', uri);
     img.addEventListener('click', imgClicked);
     div.appendChild(img);
 }
 
-function getNativeAd() {
-    //Propeller ads native
+var count = 0;
+var arr = ['//native.propellerads.com/1?z=2059928&eid=', '//native.propellerads.com/1?z=2062858&eid='];
+
+function getNativeAd(uri) {
     var propellerNativeAd = document.createElement('script');
-    propellerNativeAd.setAttribute('async', 'async');
-    propellerNativeAd.setAttribute('data-cfasync', 'false');
-    propellerNativeAd.setAttribute('src', '//native.propellerads.com/1?z=2059928&eid=');
+    if (uri) {
+        //Propeller ads interstitial
+        propellerNativeAd.setAttribute('async', 'async');
+        propellerNativeAd.setAttribute('data-cfasync', 'false');
+        propellerNativeAd.setAttribute('src', uri);
+        count++;
+    } else {
+        //Propeller ads native
+        propellerNativeAd.setAttribute('async', 'async');
+        propellerNativeAd.setAttribute('data-cfasync', 'false');
+        propellerNativeAd.setAttribute('src', arr[count]);
+        count++;
+    }
     return propellerNativeAd;
 }
 
@@ -109,16 +140,15 @@ function nextPage() {
     var i = page * 7;
     if (Object.keys(instagramFeed).length > i) {
         page++;
-        clear = true;
-        instagramAPI();
+        window.location.replace("./?pageNum=" + page);
+
     }
 }
 
 function prevPage() {
     if (page > 1) {
         page--;
-        clear = true;
-        instagramAPI();
+        window.location.replace("./?pageNum=" + page);
     }
 }
 next.addEventListener('click', nextPage);
