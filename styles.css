@@ -1,44 +1,54 @@
-html,body{
-    margin:0;
-    padding:0;
-    height:100vh;
-    width:100vw;
-    background-color:#e6e6e6;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #e6e6e6;
 }
-#insta-feed{
-    text-align:center;
-    
+
+#insta-feed {
+    text-align: center;
+
 }
-img{
-    width:80vw;
+
+img {
+    width: 80vw;
 }
-.instapic{
-    margin-top:10px;
+
+.instapic {
+    margin-top: 10px;
 }
-.store{
-    width:30px;
-    height:30px;
+
+.store {
+    width: 30px;
+    height: 30px;
 }
-.container{
-    min-height:100vh;
-    position:relative;
-    background-color:#e6e6e6;
+
+.container {
+    min-height: 100vh;
+    position: relative;
+    background-color: #e6e6e6;
 }
+
 /* .header{
     padding:10px;
     background-color:#262626;
 } */
-.header{
-    padding:10px;
-    padding-bottom:15vh;   /* Height of the footer */
-    background-color:#262626;
+.header {
+    padding: 10px;
+    padding-bottom: 15vh;
+    /* Height of the footer */
+    background-color: #262626;
 }
-.footer{
-    position:fixed;
-    bottom:0;
-    width:100vw;
-    height:20vh;   /* Height of the footer */
-    background:black;
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 20vh;
+    /* Height of the footer */
+    background: black;
 }
 
 a {
@@ -62,7 +72,7 @@ a:hover {
     color: white;
 }
 
-.buttons{
-    margin-top:20px;
-    text-align:center;
+.buttons {
+    margin-top: 20px;
+    text-align: center;
 }
