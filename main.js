@@ -19,7 +19,7 @@ prev.innerHTML = '&laquo; Previous';
 var instagramFeed = [];
 var clear = false;
 var page = 1;
-var testing = true;
+var testing = false;
 
 function loadEverything() {
     if (testing === false) {
