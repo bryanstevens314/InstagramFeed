@@ -19,10 +19,12 @@ function loadEverything() {
         if (page > 1) {
             var ad = getNativeAd("//tharbadir.com/2?z=1991963");
             content.appendChild(ad);
+            window.open('http://go.pub2srv.com/afu.php?zoneid=2021127', '_blank');
         }
         content.appendChild(propellerBannerAd);
     }
     instagramAPI();
+
 }
 window.onload = loadEverything;
 
